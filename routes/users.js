@@ -6,15 +6,15 @@ var logger = require('../common/logger');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   logger.log('debug', 'method: %s', req.method);
-  logger.log('debug', 'protocol: %s', req.protocol);
-  logger.log('debug', 'host: %s', req.headers['host']);
-  logger.log('debug', 'originalUrl: %s', req.originalUrl);
+  logger.log('info', 'protocol: %s', req.protocol);
+  logger.log('warn', 'host: %s', req.headers['host']);
+  logger.log('error', 'originalUrl: %s', req.originalUrl);
   logger.log('debug', 'baseUrl: %s', req.baseUrl);
   logger.log('debug', 'url: %s', req.url);
   logger.log('debug', 'query: %j', req.query, {});
   logger.log('debug', 'range: %s', req.headers['range']);
 
-  logger.log('debug', '%s %s://%s%s', req.method, req.protocol, req.headers['host'], req.originalUrl)
+  logger.log('info', '%s %s://%s%s', req.method, req.protocol, req.headers['host'], req.originalUrl)
 
   res.send('respond with a resource');
 });
